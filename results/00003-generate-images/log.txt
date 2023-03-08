@@ -1,0 +1,18 @@
+dnnlib: Running run_generator.generate_images() on localhost...
+Loading networks from "results/00006-stylegan2-ffhq-8gpu-config-f/networks-final.pkl"...
+Traceback (most recent call last):
+  File "run_generator.py", line 168, in <module>
+    main()
+  File "run_generator.py", line 163, in main
+    dnnlib.submit_run(sc, func_name_map[subcmd], **kwargs)
+  File "D:\python_work\stylegan2-master\dnnlib\submission\submit.py", line 343, in submit_run
+    return farm.submit(submit_config, host_run_dir)
+  File "D:\python_work\stylegan2-master\dnnlib\submission\internal\local.py", line 22, in submit
+    return run_wrapper(submit_config)
+  File "D:\python_work\stylegan2-master\dnnlib\submission\submit.py", line 280, in run_wrapper
+    run_func_obj(**submit_config.run_func_kwargs)
+  File "D:\python_work\stylegan2-master\run_generator.py", line 21, in generate_images
+    _G, _D, Gs = pretrained_networks.load_networks(network_pkl)
+  File "D:\python_work\stylegan2-master\pretrained_networks.py", line 72, in load_networks
+    stream = open(path_or_url, 'rb')
+FileNotFoundError: [Errno 2] No such file or directory: 'results/00006-stylegan2-ffhq-8gpu-config-f/networks-final.pkl'
